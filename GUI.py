@@ -1,4 +1,4 @@
-from tkinter import filedialog, messagebox, Tk, Label, Entry, Button
+from tkinter import filedialog, Tk, Label, Entry, Button
 import subprocess
 
 root = Tk()
@@ -6,24 +6,16 @@ root.geometry('340x230')
 root.resizable(width=False, height=False)
 root.title("GUI для генератора IPv6 от Vikulin")
 
-already_running = False
-
 
 def start():
-    global already_running
-    if not already_running:
-        already_running = True
-        ygg_nice_ipv6_exe_path = filedialog.askopenfilename(filetypes=(("Ygg_nice_ipv6.exe", "*.exe"),))
-        subprocess.Popen(
-            f"{ygg_nice_ipv6_exe_path} {matching_bytes_field.get()} {ipv6_limit_field.get()} {what_to_search_field.get()}",
-            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, stdin=subprocess.DEVNULL)
-        # пока вывод в никуда, потом сделаем консоль
-        messagebox.showinfo("Запущено", "Не закрывайте GUI, так как это остановит генератор. Как узнать ключи ("
-                                        "результат работы "
-                                        "программы), мы ещё не придумали.")
-        # из-за root.destroy() гуи закрывается, и все субпроцессы тоже
-    else:
-        messagebox.showerror("Ошибка", "Генератор уже работает!")
+    ygg_nice_ipv6_exe_path = filedialog.askopenfilename(filetypes=(("Ygg_nice_ipv6.exe", "*.exe"),))
+    subprocess.Popen(
+        f"{ygg_nice_ipv6_exe_path} {matching_bytes_field.get()} {ipv6_limit_field.get()} {what_to_search_field.get()}")
+    # пока вывод в никуда, потом сделаем консоль
+    # messagebox.showinfo("Запущено", "Не закрывайте GUI, так как это остановит генератор. Как узнать ключи ("
+    #                                "результат работы "
+    #                                "программы), мы ещё не придумали.")
+    root.destroy()
 
 
 repeated_bytes = Label(root, text="Число повторяющихся байтов")
