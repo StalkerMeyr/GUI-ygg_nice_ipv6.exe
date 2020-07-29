@@ -1,12 +1,13 @@
 from tkinter import *
-import os
+import subprocess
 root = Tk()
 root.geometry('340x230')
 root.resizable(width=False, height=False)
 root.title("Генератор vikulin GUI")
 a=" " #Костыли наше все:)
 def start():
-    os.system("ygg_nice_ipv6.exe"+a+text1.get()+a+text2.get()+a+text3.get())
+    subprocess.Popen("ygg_nice_ipv6.exe"+a+text1.get()+a+text2.get()+a+text3.get())
+    root.destroy()
 
 powtor_bite=Label(root,text="Число повторяющихся байтов")
 text1=Entry(root,width=11,font='Arial 14')
