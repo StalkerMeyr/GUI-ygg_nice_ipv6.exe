@@ -144,3 +144,5 @@ cython_debug/
 .idea/
 .git/
 config.yml
+keys
+ygg_nice_ipv6.exe

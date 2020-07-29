@@ -1,4 +1,4 @@
-# GUI-ygg_nice_ipv6.exe
-Надстройка GUI для генератора ipv6 адресов ygg_nice_ipv6.exe
+# ygg_nice_ipv6-GUI.exe
+Графический интерфейс для генератора красивых IPv6 адресов ygg_nice_ipv6.exe
 # Установка 
-Разместить exe gui в папке с exe генератора ygg_nice_ipv6.exe
+Разместить GUI.exe (.py) в папке с генератором ygg_nice_ipv6.exe
