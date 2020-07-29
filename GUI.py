@@ -1,5 +1,4 @@
-from tkinter import *
-from tkinter import filedialog, messagebox
+from tkinter import filedialog, messagebox, Tk, Label, Entry, Button
 import subprocess
 
 root = Tk()
